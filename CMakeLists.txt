@@ -12,7 +12,7 @@ find_package(Qt5 REQUIRED COMPONENTS
   QuickControls2
   Svg
   Xml
-  QuickCompiler
+#  QuickCompiler
   WebEngine
   )
 find_package(Qt5 QUIET COMPONENTS QmlWorkerScript)
