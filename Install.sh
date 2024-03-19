@@ -13,12 +13,12 @@
 
 
 #Move Desktop Entry
-sudo mv -v Rosary.desktop /usr/share/applications
+mv -v Rosary.desktop /usr/share/applications
 
 #Move Icon
-sudo mv -v discord-icon.png /opt
+mv -v discord-icon.png /opt
 #Make project
 #make --directory=build
 
 #Move Binary to bin directory
-sudo mv Rosary /usr/bin
+mv Rosary /usr/bin
