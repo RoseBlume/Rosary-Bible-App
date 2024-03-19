@@ -9,7 +9,7 @@
 #wget https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/discord-icon.png
 
 #Begin Building
-cmake -B build
+#cmake -B build
 
 
 #Move Desktop Entry
@@ -18,7 +18,7 @@ sudo mv -v Rosary.desktop /usr/share/applications
 #Move Icon
 sudo mv -v discord-icon.png /opt
 #Make project
-make --directory=build
+#make --directory=build
 
 #Move Binary to bin directory
-sudo mv build/Rosary /usr/bin
+sudo mv Rosary /usr/bin
