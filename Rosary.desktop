@@ -4,9 +4,8 @@ Name=Rosary
 # Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
 # From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
 GenericName=Rosary
-Exec=/usr/bin/Rosary
-Icon=/opt/Rosary.png
-terminal=false
+Exec=/bin/flatpak run --branch=master --command=rosary org.rosary.bible
+#terminal=false
+Icon=org.rosary.bible
 Type=Application
 Categories=Network;WebBrowser;
-Actions=new-window;new-private-window;
