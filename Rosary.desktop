@@ -5,7 +5,6 @@ Name=Rosary
 # From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
 GenericName=Rosary
 Exec=/bin/flatpak run org.rosary.bible
-terminal=false
+#terminal=false
 Type=Application
 Categories=Network;WebBrowser;
-Actions=new-window;new-private-window;
