@@ -6,6 +6,6 @@ Name=Rosary
 GenericName=Rosary
 Exec=flatpak run --branch=master org.rosary.bible
 #terminal=false
-Icon=/app/share/icons/hicolor/scalable/apps/org.rosary.bible.png
+Icon=/share/icons/hicolor/scalable/apps/org.rosary.bible.png
 Type=Application
 Categories=Network;WebBrowser;
