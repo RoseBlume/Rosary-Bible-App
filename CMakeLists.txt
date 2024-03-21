@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.5)
 project(Rosary LANGUAGES CXX VERSION 1.0.0)
 
 # Find all required package, if some is missing it will result in error in target_link_libraries
-find_package(Qt5 REQUIRED COMPONENTS
+find_package(Qt6 REQUIRED COMPONENTS
   Core
   Gui
   Qml
@@ -12,10 +12,11 @@ find_package(Qt5 REQUIRED COMPONENTS
   QuickControls2
   Svg
   Xml
+  Pdf
 #  QuickCompiler
-  WebEngine
+  WebEngineQuick
   )
-find_package(Qt5 QUIET COMPONENTS QmlWorkerScript)
+find_package(Qt6 QUIET COMPONENTS QmlWorkerScript)
 
 add_executable(Rosary src/main.cpp qml/qml.qrc)
 
@@ -29,18 +30,19 @@ set_target_properties(Rosary PROPERTIES AUTOMOC TRUE)
 
 # target_link_libraries and not qt5_use_module because it is deprecated
 target_link_libraries(Rosary PRIVATE
-  Qt5::Core
-  Qt5::Gui
-  Qt5::Svg
-  Qt5::Xml
-  Qt5::Qml
-  Qt5::Quick
-  Qt5::QuickControls2
-  Qt5::WebEngine
+  Qt6::Core
+  Qt6::Gui
+  Qt6::Svg
+  Qt6::Xml
+  Qt6::Qml
+  Qt6::Quick
+  Qt6::QuickControls2
+  Qt6::WebEngineQuick
+  Qt6::Pdf
 )
 
 # Only use static macro if linking with static qt
-get_target_property(QT_TARGET_TYPE Qt5::Core TYPE)
+get_target_property(QT_TARGET_TYPE Qt6::Core TYPE)
 if(${QT_TARGET_TYPE} STREQUAL "STATIC_LIBRARY")
   include(cmake/FetchQtStaticCMake.cmake)
 
