@@ -6,8 +6,8 @@ import QtQuick.Pdf 6.4
 
 Window {
     id: window
-    title: qsTr("Rosaury Gui")
-/*  Rectangle {
+    title: qsTr("Rosaury Gui")/*
+    Rectangle {
         height:32
         width:parent.width * 0.5
         z:3
