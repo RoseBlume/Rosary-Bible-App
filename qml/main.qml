@@ -1,12 +1,69 @@
-import QtWebEngine 1.8
-import QtQuick 2.0
-import QtQuick.Window 2.0
-import QtQuick.Controls 2.15
-import Qt.labs.platform 1.1
+import QtWebEngine 6.4
+import QtQuick 6.4
+import QtQuick.Window 6.4
+import QtQuick.Controls 6.4
+import QtQuick.Pdf 6.4
 
 Window {
     id: window
     title: qsTr("Rosaury Gui")
+    Rectangle {
+        height:32
+        width:parent.width * 0.5
+        z:3
+        x:parent.width - (parent.width * 0.5)
+
+        ComboBox {
+            id:"vers"
+            height:parent.height
+            width:parent.width * 0.25
+            x: parent.width * 0.75
+            currentIndex:0
+            model: ["NIV", "NRSV"]
+            onCurrentIndexChanged: {
+                console.log(("qrc: /Bibles/" + lang.model[lang.currentIndex] + "/" + (vers.model[vers.currentIndex]) + ".pdf"))
+                pdoc.source = ("qrc: /Bibles/" + lang.model[lang.currentIndex] + "/" + (vers.model[vers.currentIndex]) + ".pdf")
+                //read.document = (PdfDocument {source: ("qrc" + (string(vers.model[vers.currentIndex])) + "pdf")})
+            }
+        }
+        ComboBox {
+            id:"lang"
+            width:parent.width * 0.25
+            x: parent.width * 0.5
+            height:parent.height
+            model: ["English"]
+            onCurrentIndexChanged: {
+                console.log(lang.model[lang.currentIndex])
+            }
+        }
+        ComboBox {
+            id:"mode"
+            width:parent.width * 0.25
+            x: parent.width * 0.25
+            height:parent.height
+            model: ["Study", "Reading"]
+            onCurrentIndexChanged: {
+                console.log(mode.model[mode.currentIndex])
+            }
+        }
+    }
+    Rectangle{
+        z:4
+        width:parent.height
+        height:parent.height
+        PdfDocument {
+            id:pdoc
+            source: "qrc: Bible/English/NIV.pdf"
+        }
+        PdfMultiPageView{
+            id:"read"
+            currentPage:1
+            width:Screen.width
+            height:Screen.height
+            document: pdoc
+            anchors.fill: parent
+        }
+    }
     Rectangle{
         height:32
         width:parent.width * 0.5
@@ -110,8 +167,9 @@ Window {
     }
     Rectangle{
         width:parent.width * 0.5
-        height:parent.height
+        height:parent.height * 0.9
         x:parent.width * 0.5
+        y: parent.height * 0.1
         ScrollView {
             width:parent.width
             height:parent.height
@@ -126,6 +184,7 @@ Window {
         id: c
         // This property is used to determine
         property var view: view1
+        property var langs: "English"
         // This function is used to change the current view and send the old view to the back layer while bringing the new view to the front.
         function viewchange (a) {
             c.view.z = 0
