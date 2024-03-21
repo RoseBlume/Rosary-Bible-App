@@ -2,7 +2,5 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Bibles/English/NIV.pdf</file>
-        <file>Bibles/English/NRSV.pdf</file>
     </qresource>
 </RCC>
