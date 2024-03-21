@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=org.rosary.bible
+Comment=A simple app for bible study
+Categories=Network;Qt;
+
+Icon=org.rosary.bible.png
+Exec=org.rosary.bible
+Terminal=false

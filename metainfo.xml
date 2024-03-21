@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>org.rosary.bible</id>
+
+    <name>org.rosary.bible</name>
+    <summary>A simple app for bible study</summary>
+
+    <metadata_license>MIT</metadata_license>
+    <project_license>MIT</project_license>
+
+    <description>
+        <p>
+            A simple app for reading and studying the bible. Written using QT.
+        </p>
+    </description>
+
+    <launchable type="desktop-id">org.rosary.bible.desktop</launchable>
+</component>
