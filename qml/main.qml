@@ -168,7 +168,7 @@ Window {
     }
     Rectangle{
         width:parent.width * 0.5
-        height:parent.height * 0.9
+        height:parent.height
         x:parent.width * 0.5
         y: parent.height * 0.1
         ScrollView {
